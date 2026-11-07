@@ -1190,19 +1190,21 @@
     }
 
     .testimonial-avatar {
-      width: 70px;
-      height: 70px;
+      width: 76px;
+      height: 76px;
       border-radius: 50%;
       overflow: hidden;
       flex-shrink: 0;
-      border: 2px solid var(--accent-green);
+      border: 2.5px solid var(--accent-green);
       background-color: #f1ede5;
+      box-shadow: 0 4px 12px rgba(27, 94, 32, 0.12);
     }
 
     .testimonial-avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 20%;
       display: block;
     }
 
@@ -1510,19 +1512,28 @@
 
     .cta-checklist {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: 0.96rem;
-      margin-bottom: 34px;
-      color: #d6ebd7;
-      font-weight: 500;
+      flex-direction: column;
+      align-items: flex-start;
+      width: fit-content;
+      max-width: 340px;
+      margin: 0 auto 30px auto;
+      gap: 12px;
+      font-size: 1.05rem;
+      color: #e2f5e4;
+      font-weight: 600;
+      text-align: left;
     }
 
-    .cta-checklist span {
+    .cta-checklist .cta-check-item {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+    }
+
+    .cta-checklist .cta-check-item i {
+      color: var(--gold-bright);
+      font-size: 1.15rem;
+      flex-shrink: 0;
     }
 
     .cta-button-row {
@@ -2328,8 +2339,37 @@
       .desktop-nav, .nav-action-btn {
         display: none;
       }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: var(--bg-cream);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      .nav-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 68px;
+        padding: 0 16px;
+      }
+      .brand-logo {
+        margin: 0 auto;
+        justify-content: center;
+        text-align: center;
+      }
+      .nav-container > div:last-child {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+      }
       .sidebar-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .hero-grid {
         grid-template-columns: 1fr;
@@ -2439,7 +2479,7 @@
       <a href="tel:+919940467055" class="btn btn-outline-green" style="width: 100%;" onclick="handleTelClick(event, '+91 99404 67055')">
         <i class="fa-solid fa-phone"></i> Call Therapist: 99404 67055
       </a>
-      <a href="https://wa.me/919940467055?text=Hello%20Yuvaraj%20sir%2C%20I%20would%20like%20to%20know%20more%20about%20your%20Ayurveda%20massage%20therapies%20at%20SVN%20Re%2BLife." target="_blank" class="btn" style="width: 100%; background: #25D366; color: #ffffff;">
+      <a href="https://wa.me/919940467055?text=Hello%20Yuvaraj%20sir%2C%20I%20would%20like%20to%20book%20an%20Ayurvedic%20massage%20appointment%20with%20SVN%20Re%2BLife." target="_blank" class="btn" style="width: 100%; background: #25D366; color: #ffffff;">
         <i class="fa-brands fa-whatsapp"></i> WhatsApp your therapist
       </a>
     </div>
@@ -2488,7 +2528,7 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="badge-pill badge-men-only">
-          <i class="fa-solid fa-mars"></i> Exclusive Men's Wellness &bull; Male Clients Only
+          <i class="fa-solid fa-mars"></i> Exclusively For Male Clients
         </div>
         <h1>SVN Re<span style="color:var(--gold-bright);">+</span>Life<br>Authentic Ayurveda<br><em>for Men</em></h1>
         <div class="leaf-divider" style="margin-bottom: 14px;"><i class="fa-solid fa-leaf" style="color: var(--gold-bright);"></i></div>
@@ -2505,7 +2545,7 @@
 
         <div class="hero-trust-badges">
           <div class="trust-badge-item">
-            <i class="fa-solid fa-mars" style="color: var(--gold-bright);"></i> Strictly Male Clients Only
+            <i class="fa-solid fa-mars" style="color: var(--gold-bright);"></i> Exclusively For Male Clients
           </div>
           <div class="trust-badge-item">
             <i class="fa-solid fa-user-check" style="color: var(--accent-green);"></i> Dedicated Sole Male Therapist
@@ -2794,7 +2834,7 @@
           <ul>
             <li><i class="fa-solid fa-xmark"></i> Driving through stressful traffic and pollution right after massage negates benefits.</li>
             <li><i class="fa-solid fa-xmark"></i> Public waiting areas and shared massage tables with questionable hygiene.</li>
-            <li><i class="fa-solid fa-xmark"></i> Rushed shower rooms with cold water and strict checkout schedules.</li>
+            <li><i class="fa-solid fa-xmark"></i> Rushed shower rooms with fixed water temperatures and strict checkout schedules.</li>
           </ul>
         </div>
         <div class="compare-card home">
@@ -2802,7 +2842,7 @@
           <ul>
             <li><i class="fa-solid fa-check"></i> Therapist brings sanitized therapy equipment, hygienic sheets, and warm oil kits.</li>
             <li><i class="fa-solid fa-check"></i> 100% private and serene atmosphere in your own bedroom or living space.</li>
-            <li><i class="fa-solid fa-check"></i> Sleep peacefully and take a warm shower at your own relaxed pace.</li>
+            <li><i class="fa-solid fa-check"></i> Rest peacefully in comfort; our therapist advises the ideal bath water temperature for your body.</li>
           </ul>
         </div>
       </div>
@@ -2923,11 +2963,26 @@
           <img src="images/therapist_portrait.jpg?v=2" alt="Therapist Yuvaraj R - Certified Kerala Ayurveda Practitioner">
         </div>
         <div class="therapist-details">
-          <h3>Meet Yuvaraj R &mdash; Dedicated Therapist</h3>
-          <p>His name is <strong>Yuvaraj R</strong>, trained rigorously in traditional Kerala style massage therapies with <strong>10+ years of healing experience</strong>. Upholding authentic sacred discipline, he has his own brand of choosing high-grade Ayurvedic pharmacy products to ensure the highest medicinal quality, efficacy, and purity in every treatment. Guided by a noble long-term commitment to society, he now aspires to train and mentor upcoming students in this classical healing science for the future upscalement and preservation of authentic Kerala Ayurveda in society, rather than mere business expansion.</p>
+          <h3>Meet Yuvaraj R &mdash; Dedicated Sole Male Practitioner</h3>
+          <p>His name is <strong>Yuvaraj R</strong>, possessing over <strong>7+ years of certified clinical practice</strong> in classical Kerala Ayurvedic massage therapies. His healing journey is founded upon authentic hospital discipline and esteemed medical mentorship:</p>
+          <ul class="therapist-timeline-list" style="list-style: none; padding: 0; margin: 12px 0 16px 0; display: flex; flex-direction: column; gap: 9px;">
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.94rem; color: var(--text-dark); line-height: 1.45;">
+              <i class="fa-solid fa-circle-check" style="color: var(--accent-green); margin-top: 3px; flex-shrink: 0;"></i>
+              <span><strong>2002 &ndash; 2005:</strong> Clinical training &amp; mentorship under esteemed <strong>Dr. Ramaswamy Pillai (BSMS)</strong> at <strong>Sri Ragavendra Multi Speciality Hospital and Research Center</strong>.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.94rem; color: var(--text-dark); line-height: 1.45;">
+              <i class="fa-solid fa-circle-check" style="color: var(--accent-green); margin-top: 3px; flex-shrink: 0;"></i>
+              <span><strong>2007 &ndash; 2026:</strong> Senior Ayurvedic therapist at <strong>Shree Ayurvedic Multispeciality Hospital &ndash; West Mambalam</strong>.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.94rem; color: var(--text-dark); line-height: 1.45;">
+              <i class="fa-solid fa-circle-check" style="color: var(--accent-green); margin-top: 3px; flex-shrink: 0;"></i>
+              <span><strong>SVN Re+Life Practice:</strong> With over two decades of hospital foundation, he has established his own dedicated independent practice to deliver pure, unhurried authentic therapies with curated pharmacy-grade oils and to mentor upcoming students in the sacred science of authentic Kerala Ayurveda for society.</span>
+            </li>
+          </ul>
           <div class="therapist-credentials">
-            <span class="credential-tag" style="background: var(--light-green); color: var(--primary-green);"><i class="fa-solid fa-award"></i> 10+ Years Kerala Expertise</span>
-            <span class="credential-tag" style="background: var(--ruby-light); color: var(--ruby-red);"><i class="fa-solid fa-mortar-pestle"></i> Curated Pharmacy Quality</span>
+            <span class="credential-tag" style="background: var(--light-green); color: var(--primary-green);"><i class="fa-solid fa-award"></i> 7+ Years Kerala Expertise</span>
+            <span class="credential-tag" style="background: var(--ruby-light); color: var(--ruby-red);"><i class="fa-solid fa-hospital"></i> Shree Ayurvedic Hospital (2007&ndash;2026)</span>
+            <span class="credential-tag" style="background: #e0f2fe; color: #0369a1;"><i class="fa-solid fa-user-doctor"></i> Dr. Ramaswamy Pillai Mentorship</span>
             <span class="credential-tag" style="background: var(--amber-light); color: var(--amber-warm);"><i class="fa-solid fa-graduation-cap"></i> Student Mentorship for Society</span>
           </div>
         </div>
@@ -2949,8 +3004,8 @@
 
       <div class="faq-grid">
         <div class="faq-card" style="border-left: 4.5px solid var(--amber-warm); background: #fffdfa;">
-          <h4><i class="fa-solid fa-mars" style="color: var(--amber-warm);"></i> Are services available for female clients?</h4>
-          <p><strong>No, bookings are strictly for male clients only.</strong> SVN Re+Life operates as an exclusive men's traditional Ayurveda wellness practice. All treatments are conducted solely by our certified male practitioner. Female clients will not be accepted.</p>
+          <h4><i class="fa-solid fa-mars" style="color: var(--amber-warm);"></i> Are services available for female clients or couples?</h4>
+          <p><strong>No, bookings are Exclusively For Male Clients.</strong> SVN Re+Life operates as a dedicated sanctuary exclusively for men's wellness, pain management, and stress relief. All therapies are personally conducted by certified male therapist Yuvaraj R.</p>
         </div>
         <div class="faq-card">
           <h4><i class="fa-solid fa-circle-question"></i> What kind of oils are used?</h4>
@@ -2966,7 +3021,7 @@
         </div>
         <div class="faq-card">
           <h4><i class="fa-solid fa-circle-question"></i> What should I do after the massage?</h4>
-          <p>Allow the therapeutic oils to absorb into your skin for 30–45 minutes. Then take a warm shower without harsh soaps. Drink warm water and avoid heavy physical exertion.</p>
+          <p>Allow the healing herbal oils to absorb into your body for 30&ndash;45 minutes. Because every body constitution (dosha) and therapy differs, our therapist will personally evaluate you and advise whether warm or room-temperature water is right for your bath. Avoid harsh chemical soaps and heavy physical work for optimal rejuvenation.</p>
         </div>
         <div class="faq-card">
           <h4><i class="fa-solid fa-circle-question"></i> How many sessions are recommended for back pain?</h4>
@@ -2993,7 +3048,7 @@
             </p>
           </div>
         </div>
-        <a href="https://wa.me/919940467055?text=Hello%20Yuvaraj%20sir%2C%20I%20have%20a%20question%20regarding%20SVN%20Re%2BLife%20Ayurvedic%20therapies." target="_blank" rel="noopener noreferrer" class="btn" style="background: #25D366; color: #ffffff; border-color: #25D366; font-weight: 700; font-size: 0.95rem; padding: 12px 22px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);">
+        <a href="https://wa.me/919940467055?text=Hello%20Yuvaraj%20sir%2C%20I%20would%20like%20to%20book%20an%20Ayurvedic%20massage%20appointment%20with%20SVN%20Re%2BLife." target="_blank" rel="noopener noreferrer" class="btn" style="background: #25D366; color: #ffffff; border-color: #25D366; font-weight: 700; font-size: 0.95rem; padding: 12px 22px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);">
           <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Raise your question in WhatsApp 99404 67055 &rarr;
         </a>
       </div>
@@ -3008,14 +3063,14 @@
       </div>
       <h2>Book Your Ayurveda Massage Today</h2>
       <div style="display: inline-block; background: rgba(245, 158, 11, 0.2); border: 1px solid var(--gold-bright); color: #fef08a; padding: 6px 18px; border-radius: 50px; font-weight: 800; font-size: 0.88rem; margin-bottom: 20px;">
-        <i class="fa-solid fa-mars"></i> Exclusive Service for Men &bull; Centre Visit &amp; Home Visit
+        <i class="fa-solid fa-mars"></i> Exclusively For Male Clients
       </div>
       <div class="cta-checklist">
-        <span><i class="fa-solid fa-check" style="color: var(--gold-bright);"></i> Release Stress</span> &bull;
-        <span><i class="fa-solid fa-check" style="color: var(--gold-bright);"></i> Relieve Body Pain</span> &bull;
-        <span><i class="fa-solid fa-check" style="color: var(--gold-bright);"></i> Renew Vital Energy</span> &bull;
-        <span><i class="fa-solid fa-check" style="color: var(--gold-bright);"></i> Nourish Scalp &amp; Hair</span> &bull;
-        <span><i class="fa-solid fa-check" style="color: var(--gold-bright);"></i> Peaceful Deep Sleep</span>
+        <div class="cta-check-item"><i class="fa-solid fa-check"></i> <span>Release Stress</span></div>
+        <div class="cta-check-item"><i class="fa-solid fa-check"></i> <span>Relieve Body Pain</span></div>
+        <div class="cta-check-item"><i class="fa-solid fa-check"></i> <span>Renew Vital Energy</span></div>
+        <div class="cta-check-item"><i class="fa-solid fa-check"></i> <span>Nourish Scalp &amp; Hair</span></div>
+        <div class="cta-check-item"><i class="fa-solid fa-check"></i> <span>Peaceful Deep Sleep</span></div>
       </div>
       <div class="cta-button-row">
         <button onclick="openBookingModal()" class="btn btn-white">
@@ -3121,7 +3176,7 @@
         <div class="footer-contact-col">
           <h4 class="footer-col-title"><i class="fa-solid fa-map-location-dot" style="color: var(--amber-warm);"></i> Massage Centre Location</h4>
           
-          <a href="https://www.google.com/maps/search/?api=1&query=New+no+3,+Nagarathinammal+colony,+next+to+Raghavan+Colony,+West+Mambalam,+Chennai,+Tamil+Nadu+600033" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: block;" title="Open in Google Maps">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=3,+Nagarathinammal+Colony,+next+to+Raghavan+Colony,+West+Mambalam,+Chennai,+Tamil+Nadu+600033" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: block;" title="Open Direct Route on Google Maps">
             <div class="address-box-card">
               <div class="address-icon">
                 <svg width="22" height="26" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
@@ -3139,8 +3194,8 @@
               </div>
             </div>
           </a>
-          <a href="https://www.google.com/maps/search/?api=1&query=New+no+3,+Nagarathinammal+colony,+next+to+Raghavan+Colony,+West+Mambalam,+Chennai,+Tamil+Nadu+600033" target="_blank" rel="noopener noreferrer" class="maps-btn">
-            <i class="fa-brands fa-google" style="margin-right: 5px;"></i> Open in Google Maps &rarr;
+          <a href="https://www.google.com/maps/dir/?api=1&destination=3,+Nagarathinammal+Colony,+next+to+Raghavan+Colony,+West+Mambalam,+Chennai,+Tamil+Nadu+600033" target="_blank" rel="noopener noreferrer" class="maps-btn">
+            <i class="fa-brands fa-google" style="margin-right: 5px;"></i> Get Direct Route on Google Maps &rarr;
           </a>
 
           <div class="contact-details-box">
@@ -3150,7 +3205,7 @@
             </div>
             <div class="contact-row">
               <span class="contact-label"><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp:</span>
-              <a href="https://wa.me/919940467055?text=Hello%20Yuvaraj%20sir%2C%20I%20would%20like%20to%20enquire%20about%20SVN%20Re%2BLife%20Ayurvedic%20therapies." target="_blank" class="contact-val">+91 99404 67055</a>
+              <a href="https://wa.me/919940467055?text=Hello%20Yuvaraj%20sir%2C%20I%20would%20like%20to%20book%20an%20Ayurvedic%20massage%20appointment%20with%20SVN%20Re%2BLife." target="_blank" class="contact-val">+91 99404 67055</a>
             </div>
             <div class="contact-row">
               <span class="contact-label"><i class="fa-regular fa-clock" style="color: var(--teal-vital);"></i> Timings:</span>
@@ -3172,7 +3227,7 @@
           <span class="brand-display-life">Life</span>
           <span class="brand-display-tick"><i class="fa-solid fa-check"></i></span>
         </div>
-        <p class="unique-brand-sub">Authentic Ayurvedic Wellness &bull; West Mambalam, Chennai &bull; Exclusively For Men</p>
+        <p class="unique-brand-sub">Authentic Ayurvedic Wellness &bull; West Mambalam, Chennai &bull; Exclusively For Male Clients</p>
         <p class="copyright-text">&copy; 2026 SVN Re+Life. All rights reserved. Traditional, safe, and authentic therapies delivered with master care.</p>
       </div>
     </div>
@@ -3199,7 +3254,7 @@
           
           <div style="background: #fffbeb; border: 1.5px solid #f59e0b; border-radius: 8px; padding: 10px 14px; font-size: 0.82rem; color: #92400e; display: flex; align-items: center; gap: 10px; text-align: left;">
             <i class="fa-solid fa-mars" style="font-size: 1.3rem; color: #d97706; flex-shrink: 0;"></i>
-            <div><strong>Notice:</strong> Services are strictly for <strong>male clients only</strong>. Administered solely by our certified male therapist.</div>
+            <div><strong>Notice:</strong> Services are <strong>Exclusively For Male Clients</strong>. Administered solely by our certified male therapist.</div>
           </div>
         </div>
 
@@ -3347,7 +3402,7 @@
           <span>to book your appointment</span>
         </div>
         
-        <a id="bookingModalWhatsappBtn" href="https://wa.me/919940467055?text=Hello%2C%20I%20am%20interested%20in%20a%20massage.%20Please%20call%20me." target="_blank" class="btn modal-cta-whatsapp-btn">
+        <a id="bookingModalWhatsappBtn" href="https://wa.me/919940467055?text=Hello%20Yuvaraj%20sir%2C%20I%20would%20like%20to%20book%20an%20Ayurvedic%20massage%20appointment%20with%20SVN%20Re%2BLife." target="_blank" class="btn modal-cta-whatsapp-btn">
           <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Send WhatsApp message
         </a>
       </div>
@@ -3429,7 +3484,7 @@
 
           <!-- Direct WhatsApp and Close Action Buttons -->
           <div style="display: flex; gap: 10px;">
-            <a id="featureModalWhatsappBtn" href="https://wa.me/919940467055?text=Hello%20SVN%20Re%2BLife%2C%20I%20would%20like%20to%20book%20a%20massage%20session." target="_blank" class="btn" style="flex: 1; background: #25D366; color: #ffffff; border-color: #25D366; font-weight: 700; font-size: 0.92rem; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <a id="featureModalWhatsappBtn" href="https://wa.me/919940467055?text=Hello%20Yuvaraj%20sir%2C%20I%20would%20like%20to%20book%20an%20Ayurvedic%20massage%20appointment%20with%20SVN%20Re%2BLife." target="_blank" class="btn" style="flex: 1; background: #25D366; color: #ffffff; border-color: #25D366; font-weight: 700; font-size: 0.92rem; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
               <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> WhatsApp to Book &rarr;
             </a>
             <button onclick="closeTherapyFeaturesModal()" class="btn btn-outline-green" style="padding: 10px 18px; font-size: 0.9rem;">
@@ -3443,9 +3498,36 @@
 
   <!-- Interactive JavaScript -->
   <script>
-    // Smooth scroll for navigation links with sticky header offset
+    // Calm, Gentle Smooth Scroll Animation (Slower, relaxing pace for peaceful Ayurvedic experience)
     let isProgrammaticScroll = false;
-    let scrollTimeout = null;
+
+    function calmSmoothScrollTo(targetPosition, duration = 1000) {
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        // EaseInOutCubic for a graceful, slow, and gentle scroll curve
+        const ease = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        window.scrollTo(0, startPosition + distance * ease);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        } else {
+          isProgrammaticScroll = false;
+        }
+      }
+
+      isProgrammaticScroll = true;
+      requestAnimationFrame(animation);
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -3464,20 +3546,10 @@
               }
             });
 
-            // Prevent scroll spy from jumping during the smooth scroll animation
-            isProgrammaticScroll = true;
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-              isProgrammaticScroll = false;
-            }, 800);
-
             const headerOffset = 80;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
+            calmSmoothScrollTo(offsetPosition, 1000);
             history.pushState(null, null, targetId);
           }
         }
@@ -3611,6 +3683,7 @@
       phone: "+91 99404 67055",
       phoneRaw: "+919940467055",
       whatsApp: "919940467055",
+      defaultAppointmentMsg: "Hello Yuvaraj sir, I would like to book an Ayurvedic massage appointment with SVN Re+Life.",
       // Backwards-compatible aliases so any reference continues to work seamlessly:
       bookingPhone: "+91 99404 67055",
       bookingPhoneRaw: "+919940467055",
@@ -3719,8 +3792,8 @@
         therapistCallEl.onclick = (e) => handleTelClick(e, SITE_CONFIG.phone);
       }
 
-      // WhatsApp text prefilled
-      const waMsg = encodeURIComponent(`Hello SVN Re+Life, I would like to book a session for ${data.title} (${data.duration}). Please let me know available slots.`);
+      // WhatsApp unified appointment text prefilled
+      const waMsg = encodeURIComponent(SITE_CONFIG.defaultAppointmentMsg);
       document.getElementById('featureModalWhatsappBtn').href = `https://wa.me/${SITE_CONFIG.whatsApp}?text=${waMsg}`;
 
       document.getElementById('therapyFeaturesModal').classList.add('open');
@@ -3760,7 +3833,7 @@
       }
       if (waBtn && SITE_CONFIG) {
         const waNumber = SITE_CONFIG.whatsApp || (SITE_CONFIG.phone ? SITE_CONFIG.phone.replace(/[^0-9]/g, '') : '919940467055');
-        const waMsg = encodeURIComponent("Hello, I am interested in a massage. Please call me.");
+        const waMsg = encodeURIComponent(SITE_CONFIG.defaultAppointmentMsg);
         waBtn.href = `https://wa.me/${waNumber}?text=${waMsg}`;
       }
     }
